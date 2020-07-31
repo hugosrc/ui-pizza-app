@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
-
 import { Container } from './styles';
+
+import Header from '../../components/Header'
 
 const Shop: React.FC = () => {
   return (
     <Container>
-      <Text>Hello</Text>
+      <Header/>
     </Container>
   );
 }
