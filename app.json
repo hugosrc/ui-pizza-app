@@ -1,0 +1,12 @@
+{
+  "name": "ui-pizza",
+  "displayName": "ui-pizza",
+  "expo": {
+    "name": "ui-pizza",
+    "slug": "ui-pizza",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
