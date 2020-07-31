@@ -2,10 +2,13 @@ import React from 'react';
 import { FontAwesome5 as Icon } from '@expo/vector-icons';
 
 import { Container, PizzaImage, PizzaType, PizzaName, VoteAverage, Vote, PriceAndButton, PizzaPrice, CartButton } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 const ProductCard: React.FC = () => {
+  const navigation = useNavigation()
+
   return (
-    <Container>
+    <Container activeOpacity={0.9} onPress={() => navigation.navigate('details')}>
       <PizzaImage source={require('../../assets/pizza.png')} />
 
       <PizzaType>Classic</PizzaType>

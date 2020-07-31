@@ -10,7 +10,7 @@ export const Container = styled.View`
   justify-content: space-between;
 `;
 
-export const DrawerButton = styled.TouchableOpacity`
+export const LeftButton = styled.TouchableOpacity`
  height: 32px;
  width: 32px;
  align-items: center;

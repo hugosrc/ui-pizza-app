@@ -10,7 +10,7 @@ const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 
 const StackRoutes = () => (
-  <Stack.Navigator>
+  <Stack.Navigator headerMode="none">
     <Stack.Screen name="details" component={Details} />
   </Stack.Navigator>
 )
