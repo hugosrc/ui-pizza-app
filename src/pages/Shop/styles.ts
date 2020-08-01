@@ -6,13 +6,11 @@ export const Container = styled.ScrollView`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Products = styled(FlatList)`
-  margin-bottom: 36px;
-`
+export const Products = styled(FlatList)``
 
 export const Title = styled.Text`
   margin: 16px;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.secondary};
 `

@@ -17,7 +17,7 @@ export const Card = styled.View`
 export const PizzaImage = styled.Image`
   position: absolute;
   top: -96px;
-  left: 120px;
+  left: 92px;
 
   height: 192px;
   width: 192px;
@@ -28,11 +28,11 @@ export const PizzaImage = styled.Image`
 
 export const PizzaType = styled.Text`
   color: ${({theme}) => theme.colors.gray};
-  font-size: 18px;
+  font-size: 14px;
 `;
 
 export const PizzaName = styled.Text`
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bold;
   color: ${({theme}) => theme.colors.secondary};
 `;
@@ -51,21 +51,21 @@ export const VoteAverage = styled.View`
 `;
 
 export const Vote = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 5px;
   color: ${({ theme }) => theme.colors.white};
   font-weight: bold;
 `;
 
 export const Subtitle = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
   color: ${({ theme }) => theme.colors.gray};
   font-weight: bold;
   margin-bottom: 8px;
 `;
 
 export const Description = styled.Text`
-  font-size: 17px;
+  font-size: 16px;
   color: ${({ theme }) => theme.colors.gray};
   margin-bottom: 12px;
 `;
@@ -77,7 +77,7 @@ export const PriceAndButton = styled.View`
 `;
 
 export const PizzaPrice = styled.Text`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: ${({theme}) => theme.colors.secondary};
 `;

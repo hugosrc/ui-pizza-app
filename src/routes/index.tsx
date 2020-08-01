@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import Shop from '../pages/Shop'
 import Details from '../pages/Details'
+import Cart from '../pages/Cart'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -20,6 +21,7 @@ export default () => {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="shop" component={Shop} />
+        <Drawer.Screen name="cart" component={Cart} />
         <Drawer.Screen name="details" component={StackRoutes} />
       </Drawer.Navigator>
     </NavigationContainer>

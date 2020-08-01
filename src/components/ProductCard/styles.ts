@@ -27,11 +27,11 @@ export const PizzaImage = styled.Image`
 
 export const PizzaType = styled.Text`
   color: ${({theme}) => theme.colors.gray};
-  font-size: 18px;
+  font-size: 16px;
 `
 
 export const PizzaName = styled.Text`
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bold;
   color: ${({theme}) => theme.colors.secondary};
 `
@@ -50,7 +50,7 @@ export const VoteAverage = styled.View`
 `
 
 export const Vote = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 5px;
   color: ${({ theme }) => theme.colors.white};
   font-weight: bold;
@@ -63,7 +63,7 @@ export const PriceAndButton = styled.View`
 `
 
 export const PizzaPrice = styled.Text`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: ${({theme}) => theme.colors.secondary};
 `
