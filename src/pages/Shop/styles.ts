@@ -6,8 +6,6 @@ export const Container = styled.ScrollView`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Products = styled(FlatList)``
-
 export const Title = styled.Text`
   margin: 16px;
   font-size: 28px;

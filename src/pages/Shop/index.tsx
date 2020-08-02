@@ -1,30 +1,35 @@
 import React from 'react';
-import { Container, Title, Products } from './styles';
+import { FlatList } from 'react-native';
+import { Container, Title } from './styles';
 
 import Header from '../../components/Header'
 import ProductCard from '../../components/ProductCard';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
 
 const Shop: React.FC = () => {
+  const products = useSelector((state: RootState) => state.shop.products)
+
   return (
     <Container>
       <Header/>
 
       <Title>Popular Pizza</Title>
 
-      <Products
-        data={[1,2,3,4,5]}
-        renderItem={({ item }) => <ProductCard/>}
-        keyExtractor={item => String(item)}
+      <FlatList
+        data={products}
+        renderItem={({ item }) => <ProductCard data={item} />}
+        keyExtractor={item => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
       />
 
       <Title>Daily Deal</Title>
 
-      <Products
-        data={[1,2,3,4,5]}
-        renderItem={({ item }) => <ProductCard/>}
-        keyExtractor={item => String(item)}
+      <FlatList
+        data={products}
+        renderItem={({ item }) => <ProductCard  data={item}/>}
+        keyExtractor={item => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
       />

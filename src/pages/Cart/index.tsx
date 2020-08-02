@@ -1,9 +1,8 @@
 import React from 'react';
-
+import { FlatList } from 'react-native'
 import { 
   Container,
   Title,
-  Products,
   CartDetails,
   Subtotal,
   SubtotalTitle,
@@ -15,18 +14,23 @@ import {
 
 import Header from '../../components/Header';
 import CartProduct from '../../components/CartProduct';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
 
 const Cart: React.FC = () => {
+
+  const { pizzas, subtotal } = useSelector((state: RootState) => state.cart)
+
   return (
     <Container>
       <Header/>
 
       <Title>Your Cart</Title>
 
-      <Products
-        data={[1,2,3,4,5,6]}
-        renderItem={({ item }) => <CartProduct/>}
-        keyExtractor={item => String(item)}
+      <FlatList
+        data={pizzas}
+        renderItem={({ item }) => <CartProduct id={item.id}/>}
+        keyExtractor={item => String(Math.random() * 10)}
         showsVerticalScrollIndicator={false}
       />
 
@@ -34,10 +38,10 @@ const Cart: React.FC = () => {
         <Subtotal>
           <SubtotalTitle>
             Subtotal
-            <Amount>(4 items)</Amount>
+            <Amount>({pizzas.length} items)</Amount>
           </SubtotalTitle>
 
-          <FinalPrice>60.0$</FinalPrice>
+          <FinalPrice>{subtotal}$</FinalPrice>
         </Subtotal>
 
         <CheckoutButton>

@@ -13,7 +13,24 @@ import {
   Button 
 } from './styles';
 
-const CartProduct: React.FC = () => {
+import { useDispatch } from 'react-redux';
+import { removeCart, incrementCart } from '../../store/cart/actions';
+
+interface Props {
+  id: string;
+}
+
+const CartProduct: React.FC<Props> = ({ id }) => {
+  const dispatch = useDispatch()
+
+  function handleIncrementItem() {
+    dispatch(incrementCart(id))
+  }
+
+  function handleRemoveItem() {
+    dispatch(removeCart(id))
+  }
+
   return (
     <Container>
       <PizzaImage source={require('../../assets/pizza.png')} />
@@ -26,11 +43,11 @@ const CartProduct: React.FC = () => {
         </ProductInfo>
 
         <Buttons>
-          <Button activeOpacity={0.7}>
+          <Button activeOpacity={0.7} onPress={handleIncrementItem}>
             <Icon name="plus" size={18} color="#fff" />
           </Button>
 
-          <Button activeOpacity={0.7}>
+          <Button activeOpacity={0.7} onPress={handleRemoveItem}>
             <Icon name="trash" size={18} color="#fff" />
           </Button>
         </Buttons>

@@ -13,10 +13,6 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
 `
 
-export const Products = styled(FlatList)`
-  height: 100px;
-`
-
 export const CartDetails = styled.View`
   align-self: stretch;
   margin: 0 14px;
