@@ -48,11 +48,16 @@ export const PizzaPrice = styled.Text`
 export const Buttons = styled.View`
 `
 
+export const HorizontalButtons = styled.View`
+  flex-direction: row;
+`
+
 export const Button = styled.TouchableOpacity`
   height: 35px;
   width: 35px;
   margin-bottom: 8px;
   border-radius: 8px;
+  margin-left: 8px;
 
   align-items: center;
   justify-content: center;

@@ -10,46 +10,64 @@ import {
   PizzaName,
   PizzaPrice,
   Buttons,
+  HorizontalButtons,
   Button 
 } from './styles';
 
 import { useDispatch } from 'react-redux';
-import { removeCart, incrementCart } from '../../store/cart/actions';
+import { removeCart, incrementCart, decrementCart } from '../../store/cart/actions';
 
 interface Props {
-  id: string;
+  data: {
+    id: string;
+    name: string;
+    price: number;
+    amount: number;
+  }
 }
 
-const CartProduct: React.FC<Props> = ({ id }) => {
+const CartProduct: React.FC<Props> = ({ data }) => {
   const dispatch = useDispatch()
 
   function handleIncrementItem() {
-    dispatch(incrementCart(id))
+    dispatch(incrementCart(data.id))
+  }
+
+  function handleDecrementItem() {
+    dispatch(decrementCart(data.id))
   }
 
   function handleRemoveItem() {
-    dispatch(removeCart(id))
+    dispatch(removeCart(data.id))
   }
+
 
   return (
     <Container>
       <PizzaImage source={require('../../assets/pizza.png')} />
-      <PizzaAmount>x1</PizzaAmount>
+      <PizzaAmount>x{data.amount}</PizzaAmount>
 
       <Details>
         <ProductInfo>
-          <PizzaName>Cheesy bites trio shrimp pizza</PizzaName>
-          <PizzaPrice>12.0$</PizzaPrice>
+          <PizzaName>{data.name}</PizzaName>
+          <PizzaPrice>{data.price}$</PizzaPrice>
         </ProductInfo>
 
         <Buttons>
-          <Button activeOpacity={0.7} onPress={handleIncrementItem}>
-            <Icon name="plus" size={18} color="#fff" />
-          </Button>
+          <HorizontalButtons>
+            <Button activeOpacity={0.7} onPress={handleIncrementItem}>
+              <Icon name="plus" size={18} color="#fff" />
+            </Button>
+
+            <Button activeOpacity={0.7} onPress={handleDecrementItem}>
+              <Icon name="minus" size={18} color="#fff" />
+            </Button>
+          </HorizontalButtons>
 
           <Button activeOpacity={0.7} onPress={handleRemoveItem}>
             <Icon name="trash" size={18} color="#fff" />
           </Button>
+
         </Buttons>
       </Details>
     </Container>

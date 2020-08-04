@@ -1,4 +1,4 @@
-import { CartState, CartActionTypes, ADD_CART, REMOVE_CART, INCREMENT_CART } from './types'
+import { CartState, CartActionTypes, ADD_CART, REMOVE_CART, INCREMENT_CART, DECREMENT_CART } from './types'
 
 const initialState: CartState = {
   pizzas: [],
@@ -29,6 +29,19 @@ export function cartReducer(
       pizza.amount++
       pizza.price = pizza.amount * pizza.originalPrice
 
+      return {
+        pizzas: state.pizzas,
+        subtotal
+      }
+
+    case DECREMENT_CART:
+      const foundPizza = state.pizzas.find(pizza => pizza.id === action.payload.id)
+
+      if (foundPizza.amount > 1) {
+        foundPizza.amount--
+        foundPizza.price = foundPizza.amount * foundPizza.originalPrice
+      }
+      
       return {
         pizzas: state.pizzas,
         subtotal

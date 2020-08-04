@@ -14,6 +14,7 @@ export interface CartState {
 export const ADD_CART = 'ADD_CART'
 export const REMOVE_CART = 'REMOVE_CART'
 export const INCREMENT_CART = 'INCREMENT_CART'
+export const DECREMENT_CART = 'DECREMENT_CART'
 
 interface AddCartAction {
   type: typeof ADD_CART
@@ -34,4 +35,11 @@ interface IncrementCartAction {
   }
 }
 
-export type CartActionTypes = AddCartAction | RemoveCartAction | IncrementCartAction
+interface DecrementCartAction {
+  type: typeof DECREMENT_CART
+  payload: {
+    id: string;
+  }
+}
+
+export type CartActionTypes = AddCartAction | RemoveCartAction | IncrementCartAction | DecrementCartAction

@@ -29,7 +29,7 @@ const Cart: React.FC = () => {
 
       <FlatList
         data={pizzas}
-        renderItem={({ item }) => <CartProduct id={item.id}/>}
+        renderItem={({ item }) => <CartProduct data={item}/>}
         keyExtractor={item => String(Math.random() * 10)}
         showsVerticalScrollIndicator={false}
       />
