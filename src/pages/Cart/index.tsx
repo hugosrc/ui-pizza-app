@@ -41,7 +41,7 @@ const Cart: React.FC = () => {
             <Amount>({pizzas.length} items)</Amount>
           </SubtotalTitle>
 
-          <FinalPrice>{subtotal}$</FinalPrice>
+          <FinalPrice>90$</FinalPrice>
         </Subtotal>
 
         <CheckoutButton>

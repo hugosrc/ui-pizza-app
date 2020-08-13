@@ -18,6 +18,10 @@
   <a href="#license">License</a>
 </p>
 
+<h1 align="center">
+	<img alt="Logo" src=".github/layout.png" width="100%" />
+</h1>
+
 ## Technologies
 
 Technologies that I used to develop this mobile client
